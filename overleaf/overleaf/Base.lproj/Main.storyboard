@@ -186,6 +186,39 @@
             </objects>
             <point key="canvasLocation" x="2302" y="-2"/>
         </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="zAU-5x-tkz">
+            <objects>
+                <viewController id="ATY-3i-rXH" customClass="PreviewViewController" customModule="overleaf" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Quw-Rt-Xwm">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f2V-31-zRa">
+                                <rect key="frame" x="10" y="69" width="373" height="739"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ozm-jS-ygq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ozm-jS-ygq" firstAttribute="bottom" secondItem="f2V-31-zRa" secondAttribute="bottom" constant="10" id="4HX-Wb-7M0"/>
+                            <constraint firstItem="f2V-31-zRa" firstAttribute="leading" secondItem="Ozm-jS-ygq" secondAttribute="leading" constant="10" id="ICx-0U-aqU"/>
+                            <constraint firstItem="Ozm-jS-ygq" firstAttribute="trailing" secondItem="f2V-31-zRa" secondAttribute="trailing" constant="10" id="sGh-A7-XWB"/>
+                            <constraint firstItem="f2V-31-zRa" firstAttribute="top" secondItem="Ozm-jS-ygq" secondAttribute="top" constant="10" id="wS7-21-jUv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="outputView" destination="f2V-31-zRa" id="T3g-mH-IbX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZaN-Hq-4oM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2993" y="-2"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="h1P-BX-dMC">
             <objects>

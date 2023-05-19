@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var table: UITableView!
     @IBOutlet var label: UILabel!
     
-    var models: [(title: String, note: String)] = []
+    var models: [(title: String, note: NSAttributedString)] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +58,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        let model = models[indexPath.row]
 
         cell.textLabel?.text = models[indexPath.row].title
-        cell.detailTextLabel?.text = models[indexPath.row].note
+        cell.detailTextLabel?.attributedText = models[indexPath.row].note
 
 //        let markdownString = model.note
 //            downView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
