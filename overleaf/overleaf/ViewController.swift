@@ -10,9 +10,6 @@ import Down
 import LaTeXSwiftUI
 import SwiftUI
 
-
-
-
 //iosMATH is the ANSWER
 //import Down
 

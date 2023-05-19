@@ -20,17 +20,21 @@ class ListViewController: UIViewController {
     
     public var docTitle: String = ""
     public var doc: String = ""
-    public var lat: UIView? {
-        let text = "this is in **bold**"
-            let downView = try? DownView(frame: CGRect(x: 0, y: 0, width: 200, height: 50), markdownString: text)
-            return downView
-        }
+    
+    var markdownEditorView = ContentView()
+
+//    public var lat: UIView? {
+//        let text = "this is in **bold**"
+//            let downView = try? DownView(frame: CGRect(x: 0, y: 0, width: 200, height: 50), markdownString: text)
+//            return downView
+//        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = docTitle
         docLabel.text = doc
-        latex.addSubview(lat!)
+        
+//        latex.addSubview(lat!)
         
 
             
