@@ -16,6 +16,9 @@ This project is a starting point for what can hopefully eventually become a usab
 
 ### Lessons Learned
 
+Here are some interesting Swift tools that I learned how to use in order to build out this project: 
+	- Markdown rendering in TextView
+
 ### Looking Forward 
 
 ## References 
