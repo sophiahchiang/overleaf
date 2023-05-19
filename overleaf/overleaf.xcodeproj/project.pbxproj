@@ -18,6 +18,8 @@
 		6B2039C72A17227C005B5B2A /* overleafUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2039C62A17227C005B5B2A /* overleafUITestsLaunchTests.swift */; };
 		6B2039DA2A1727AE005B5B2A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2039D92A1727AE005B5B2A /* ListViewController.swift */; };
 		6B2039DC2A1727C0005B5B2A /* DocViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2039DB2A1727C0005B5B2A /* DocViewController.swift */; };
+		6B2039DF2A174612005B5B2A /* Down in Frameworks */ = {isa = PBXBuildFile; productRef = 6B2039DE2A174612005B5B2A /* Down */; };
+		6B2039E22A17488E005B5B2A /* LaTeXSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 6B2039E12A17488D005B5B2A /* LaTeXSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B2039DF2A174612005B5B2A /* Down in Frameworks */,
+				6B2039E22A17488E005B5B2A /* LaTeXSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +153,10 @@
 			dependencies = (
 			);
 			name = overleaf;
+			packageProductDependencies = (
+				6B2039DE2A174612005B5B2A /* Down */,
+				6B2039E12A17488D005B5B2A /* LaTeXSwiftUI */,
+			);
 			productName = overleaf;
 			productReference = 6B2039A02A172277005B5B2A /* overleaf.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +229,10 @@
 				Base,
 			);
 			mainGroup = 6B2039972A172277005B5B2A;
+			packageReferences = (
+				6B2039DD2A174611005B5B2A /* XCRemoteSwiftPackageReference "Down" */,
+				6B2039E02A17488D005B5B2A /* XCRemoteSwiftPackageReference "LaTeXSwiftUI" */,
+			);
 			productRefGroup = 6B2039A12A172277005B5B2A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -604,6 +616,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6B2039DD2A174611005B5B2A /* XCRemoteSwiftPackageReference "Down" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/johnxnguyen/Down";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		6B2039E02A17488D005B5B2A /* XCRemoteSwiftPackageReference "LaTeXSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/colinc86/LaTeXSwiftUI";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6B2039DE2A174612005B5B2A /* Down */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6B2039DD2A174611005B5B2A /* XCRemoteSwiftPackageReference "Down" */;
+			productName = Down;
+		};
+		6B2039E12A17488D005B5B2A /* LaTeXSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6B2039E02A17488D005B5B2A /* XCRemoteSwiftPackageReference "LaTeXSwiftUI" */;
+			productName = LaTeXSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6B2039982A172277005B5B2A /* Project object */;
 }
