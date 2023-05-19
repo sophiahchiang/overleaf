@@ -8,29 +8,15 @@
 import UIKit
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
-    
-    var window: UIWindow?
-    
-    
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-            if let split = window?.rootViewController as? UISplitViewController {
-                split.delegate = self
-                split.preferredDisplayMode = .allVisible
-                split.maximumPrimaryColumnWidth = .greatestFiniteMagnitude
-                split.preferredPrimaryColumnWidthFraction = 0.5
-            }
+        // Override point for customization after application launch.
+        return true
+    }
 
-            return true
-        }
-    
-    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-            return true
-        }
-    
-    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

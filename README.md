@@ -16,7 +16,7 @@ This project is a starting point for what can hopefully eventually become a usab
 
 ### Lessons Learned
 
-Here are some interesting Swift tools that I learned how to use in order to build out this project: 
+I went through many different packages that claimed to support Markdown rendering in SwiftUI. The lack of documentation made it particularly difficult to figureout how each package worked and how I could implement it in the structures I'd already set up. After to trying a split screen real time text compile that kept on failing, I decided to go back to my simpler, original idea in the hopes that Icould at least get that working. Eventually, I found a package that was reliable and had a git that was a bit easier to understand. Throughout this project, I've come to appreciate the importance of good documentation and am more committed to making my work easy for others to understand in the future. Here are some interesting Swift tools that I learned how to use in order to build out this project: 
 	- Markdown rendering in TextView
 
 ### Looking Forward 

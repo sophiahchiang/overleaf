@@ -6,88 +6,67 @@
 //
 
 import UIKit
-import SwiftUI
 import Down
 
+
 class DocViewController: UIViewController {
-    
+
     @IBOutlet var titleField: UITextField!
     @IBOutlet var docField: UITextView!
-    var additionalWindows = [UIWindow]()
-
+    @IBOutlet var latexField: UITextView!
     
-    public var completion: ((String, NSAttributedString) -> Void)?
+    public var completion: ((String, String) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         titleField.becomeFirstResponder()
         
-        
-        NotificationCenter.default.addObserver(forName: UIScreen.didConnectNotification, object: nil, queue: nil) { [weak self] notification in
-            guard let self = self else { return }
-            
-            guard let newScreen = notification.object as? UIScreen else { return }
-            let screenDimensions = newScreen.bounds
-            
-            let newWindow = UIWindow(frame: screenDimensions)
-            newWindow.screen = newScreen
-            
-            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "PreviewViewController") as? PreviewViewController else {
-                fatalError("Unable to find PreviewViewController")
-            }
-            
-            newWindow.rootViewController = vc
-            newWindow.isHidden = false
-            self.additionalWindows.append(newWindow)
-            
-            self.textViewDidChange(self.docField) //Mistake?
-        }
-        
-        NotificationCenter.default.addObserver(forName: UIScreen.didDisconnectNotification, object: nil, queue: nil) { [weak self] notification in
-            guard let self = self else { return }
-            
-            guard let oldScreen = notification.object as? UIScreen else { return }
-            
-            if let window = self.additionalWindows.firstIndex(where: {
-                $0.screen == oldScreen
-            }) {
-                self.additionalWindows.remove(at: window)
-            }
-        }
+        NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: UITextView.textDidChangeNotification, object: docField)
+
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(didTapSave))
-        
     }
     
-    func textViewDidChange(_ textView: UITextView) {
-        if let preview = additionalWindows.first?.rootViewController as? PreviewViewController {
-            preview.text = textView.text
+    override func viewWillDisappear(_ animated: Bool) {
+            super.viewWillDisappear(animated)
+            
+            // Remove the observer when the view disappears
+            NotificationCenter.default.removeObserver(self, name: UITextView.textDidChangeNotification, object: docField)
         }
-        
-        if let navController = splitViewController?.viewControllers.last as? UINavigationController {
-            if let preview = navController.topViewController as? PreviewViewController {
-                preview.text = textView.text
+    
+    func renderMarkdown(markdownText: String) -> NSAttributedString? {
+            let down = Down(markdownString: markdownText)
+            do {
+                let attributedString = try down.toAttributedString()
+                return attributedString
+            } catch {
+                print("Error parsing Markdown: \(error)")
+                return nil
             }
         }
-    }
     
+    @objc func textDidChange() {
+            // Update the text in latexField
+            //latexField.text = docField.text
+        guard let docText = docField.text else {
+            latexField.text = nil
+            return
+        }
+        
+        let newText = renderMarkdown(markdownText: docText)
+        latexField.attributedText = newText
+    }
+        
     
     @objc func didTapSave() {
         if let text = titleField.text, !text.isEmpty, !docField.text.isEmpty {
-                var new: String = "" {
-                didSet {
-                    let down = Down(markdownString: new)
-                    let style = "body { font: 200% sans-serif; }"
-                    let attributedString = try? down.toAttributedString(stylesheet: style)
-                    docField.attributedText = attributedString
-                }
-            }
-            completion?(text, docField.attributedText)
+            completion?(text, docField.text)
         }
     }
-}
     
     
+    
+
     /*
     // MARK: - Navigation
 
@@ -98,3 +77,4 @@ class DocViewController: UIViewController {
     }
     */
 
+}
