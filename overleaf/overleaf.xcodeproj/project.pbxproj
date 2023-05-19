@@ -20,7 +20,6 @@
 		6B2039DC2A1727C0005B5B2A /* DocViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2039DB2A1727C0005B5B2A /* DocViewController.swift */; };
 		6B2039DF2A174612005B5B2A /* Down in Frameworks */ = {isa = PBXBuildFile; productRef = 6B2039DE2A174612005B5B2A /* Down */; };
 		6B2039E22A17488E005B5B2A /* LaTeXSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 6B2039E12A17488D005B5B2A /* LaTeXSwiftUI */; };
-		6B203A292A175BBE005B5B2A /* MathJaxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6B203A282A175BBE005B5B2A /* MathJaxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +64,6 @@
 			files = (
 				6B2039DF2A174612005B5B2A /* Down in Frameworks */,
 				6B2039E22A17488E005B5B2A /* LaTeXSwiftUI in Frameworks */,
-				6B203A292A175BBE005B5B2A /* MathJaxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,7 +156,6 @@
 			packageProductDependencies = (
 				6B2039DE2A174612005B5B2A /* Down */,
 				6B2039E12A17488D005B5B2A /* LaTeXSwiftUI */,
-				6B203A282A175BBE005B5B2A /* MathJaxSwift */,
 			);
 			productName = overleaf;
 			productReference = 6B2039A02A172277005B5B2A /* overleaf.app */;
@@ -235,7 +232,6 @@
 			packageReferences = (
 				6B2039DD2A174611005B5B2A /* XCRemoteSwiftPackageReference "Down" */,
 				6B2039E02A17488D005B5B2A /* XCRemoteSwiftPackageReference "LaTeXSwiftUI" */,
-				6B203A272A175BBE005B5B2A /* XCRemoteSwiftPackageReference "MathJaxSwift" */,
 			);
 			productRefGroup = 6B2039A12A172277005B5B2A /* Products */;
 			projectDirPath = "";
@@ -638,14 +634,6 @@
 				kind = branch;
 			};
 		};
-		6B203A272A175BBE005B5B2A /* XCRemoteSwiftPackageReference "MathJaxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/colinc86/MathJaxSwift.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -658,11 +646,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6B2039E02A17488D005B5B2A /* XCRemoteSwiftPackageReference "LaTeXSwiftUI" */;
 			productName = LaTeXSwiftUI;
-		};
-		6B203A282A175BBE005B5B2A /* MathJaxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6B203A272A175BBE005B5B2A /* XCRemoteSwiftPackageReference "MathJaxSwift" */;
-			productName = MathJaxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

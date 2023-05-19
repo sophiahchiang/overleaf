@@ -7,6 +7,11 @@
 
 import UIKit
 import Down
+import LaTeXSwiftUI
+import SwiftUI
+
+
+
 
 //iosMATH is the ANSWER
 //import Down
@@ -49,18 +54,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models.count
     }
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+//        let model = models[indexPath.row]
+
         cell.textLabel?.text = models[indexPath.row].title
         cell.detailTextLabel?.text = models[indexPath.row].note
-    
-//        let note = models[indexPath.row].note
-//                let downView = try? DownView(frame: cell.bounds, markdownString: note)
-//                cell.accessoryView = downView
-        
+
+//        let markdownString = model.note
+//            downView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//            cell.contentView.addSubview(downView ?? UIView())
+
         return cell
     }
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

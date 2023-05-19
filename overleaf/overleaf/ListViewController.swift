@@ -9,26 +9,30 @@ import UIKit
 import LaTeXSwiftUI
 import Down
 import MathJaxSwift
+import SwiftUI
 
-
-class LaTeXData: ObservableObject {
-    @Published var latex: String = ""
-}
 
 class ListViewController: UIViewController {
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var docLabel: UITextView!
+    @IBOutlet weak var latex: UIView!
     
-    var latexData = LaTeXData()
     public var docTitle: String = ""
     public var doc: String = ""
-    
+    public var lat: UIView? {
+        let text = "this is in **bold**"
+            let downView = try? DownView(frame: CGRect(x: 0, y: 0, width: 200, height: 50), markdownString: text)
+            return downView
+        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = docTitle
         docLabel.text = doc
+        latex.addSubview(lat!)
+        
+
             
 //        do {
 //                let down = Down(markdownString: doc)

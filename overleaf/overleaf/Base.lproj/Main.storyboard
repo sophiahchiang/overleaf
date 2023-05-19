@@ -142,6 +142,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cz4-BI-xdE">
+                                <rect key="frame" x="76" y="362" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwq-24-ZSY">
                                 <rect key="frame" x="10" y="69" width="373" height="60"/>
                                 <constraints>
@@ -173,6 +178,7 @@
                     </view>
                     <connections>
                         <outlet property="docLabel" destination="Gu3-Y5-SN9" id="34g-HQ-3fr"/>
+                        <outlet property="latex" destination="cz4-BI-xdE" id="X7O-GR-inu"/>
                         <outlet property="titleLabel" destination="kwq-24-ZSY" id="0fz-cw-zVV"/>
                     </connections>
                 </viewController>
