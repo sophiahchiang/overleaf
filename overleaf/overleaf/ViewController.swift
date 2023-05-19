@@ -11,6 +11,8 @@ import Down
 //iosMATH is the ANSWER
 //import Down
 
+
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var table: UITableView!
@@ -51,12 +53,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = models[indexPath.row].title
-        //cell.detailTextLabel?.text = models[indexPath.row].note
+        cell.detailTextLabel?.text = models[indexPath.row].note
     
-        let note = Down(markdownString: models[indexPath.row].note)
-            let latex = try? note.toLaTeX()
+//        let note = models[indexPath.row].note
 //                let downView = try? DownView(frame: cell.bounds, markdownString: note)
-                cell.detailTextLabel?.text = latex
+//                cell.accessoryView = downView
         
         return cell
     }
