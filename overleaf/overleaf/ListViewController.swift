@@ -19,8 +19,6 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         titleLabel.text = docTitle
         docLabel.text = doc
-
-        // Do any additional setup after loading the view.
     }
     
 
