@@ -34,14 +34,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4GA-GT-rck">
-                                                    <rect key="frame" x="20" y="6.0000000000000009" width="25" height="14.333333333333334"/>
+                                                    <rect key="frame" x="20" y="6" width="31.666666666666668" height="19.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NbX-jk-dav">
-                                                    <rect key="frame" x="19.999999999999996" y="22.333333333333336" width="43.666666666666664" height="14.333333333333334"/>
+                                                    <rect key="frame" x="19.999999999999996" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -109,7 +109,7 @@
                                 <rect key="frame" x="10" y="131" width="373" height="677"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -141,9 +141,40 @@
                     <view key="view" contentMode="scaleToFill" id="lDE-U1-zFc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwq-24-ZSY">
+                                <rect key="frame" x="10" y="69" width="373" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="aaF-tA-ofw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Gu3-Y5-SN9">
+                                <rect key="frame" x="10" y="139" width="373" height="669"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="KvQ-AB-jXR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KvQ-AB-jXR" firstAttribute="trailing" secondItem="kwq-24-ZSY" secondAttribute="trailing" constant="10" id="4zJ-qh-cqf"/>
+                            <constraint firstItem="Gu3-Y5-SN9" firstAttribute="top" secondItem="kwq-24-ZSY" secondAttribute="bottom" constant="10" id="Bjg-tx-PV3"/>
+                            <constraint firstItem="Gu3-Y5-SN9" firstAttribute="leading" secondItem="KvQ-AB-jXR" secondAttribute="leading" constant="10" id="HqE-KD-YDS"/>
+                            <constraint firstItem="KvQ-AB-jXR" firstAttribute="trailing" secondItem="Gu3-Y5-SN9" secondAttribute="trailing" constant="10" id="PiO-r0-NTw"/>
+                            <constraint firstItem="KvQ-AB-jXR" firstAttribute="bottom" secondItem="Gu3-Y5-SN9" secondAttribute="bottom" constant="10" id="kDb-Nq-Ug5"/>
+                            <constraint firstItem="kwq-24-ZSY" firstAttribute="top" secondItem="KvQ-AB-jXR" secondAttribute="top" constant="10" id="lgn-xt-s55"/>
+                            <constraint firstItem="kwq-24-ZSY" firstAttribute="leading" secondItem="KvQ-AB-jXR" secondAttribute="leading" constant="10" id="lny-qV-mZv"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="docLabel" destination="Gu3-Y5-SN9" id="34g-HQ-3fr"/>
+                        <outlet property="titleLabel" destination="kwq-24-ZSY" id="0fz-cw-zVV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJs-pE-UQ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

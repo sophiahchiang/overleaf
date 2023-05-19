@@ -28,10 +28,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         vc.title = "New Document"
         vc.navigationItem.largeTitleDisplayMode = .never
         vc.completion = { docTitle, note in
-            self.navigationController?.popToRootViewController(animated: true)
             self.models.append((title: docTitle, note: note))
             self.label.isHidden = true
             self.table.isHidden = false
+            self.table.reloadData()
+            self.navigationController?.popToRootViewController(animated: true)
+
         }
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -52,12 +54,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        let model = models[indexPath.row]
+        
         // Show note controller
         
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "note") as? ListViewController else {
                 return
         }
+        vc.navigationItem.largeTitleDisplayMode = .never
         vc.title = "Document"
+        vc.docTitle = model.title
+        vc.doc = model.note
         navigationController?.pushViewController(vc, animated: true)
     }
 

@@ -9,8 +9,16 @@ import UIKit
 
 class ListViewController: UIViewController {
 
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var docLabel: UITextView!
+    
+    public var docTitle: String = ""
+    public var doc: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleLabel.text = docTitle
+        docLabel.text = doc
 
         // Do any additional setup after loading the view.
     }
