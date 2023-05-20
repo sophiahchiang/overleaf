@@ -30,7 +30,6 @@ class DocViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
             super.viewWillDisappear(animated)
             
-            // Remove the observer when the view disappears
             NotificationCenter.default.removeObserver(self, name: UITextView.textDidChangeNotification, object: docField)
         }
     

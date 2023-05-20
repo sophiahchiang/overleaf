@@ -56,6 +56,7 @@ class ListViewController: UIViewController {
     
         @objc func doneButtonPressed() {
             hideTextView(latexField)
+            print("donebuttonpressed")
         }
     
         func hideTextView(_ textView: UITextView) {
