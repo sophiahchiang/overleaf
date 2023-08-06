@@ -1,6 +1,6 @@
 # Overleaf
 
-My final project for Mobile Software Development is a self-proposed app that mimics the functionality of Overleaf, a collaborative cloud-based LaTeX editor used for writing, editing and publishing documents. 
+My final project for Mobile Software Development is a self-proposed app that mimics the functionality of Overleaf, a collaborative cloud-based editor used for writing, editing and publishing documents. 
 
 ## Goals 
 
@@ -29,4 +29,11 @@ Looking forward, I hope that the time I spend on this app is dedicated to making
 ## References 
 
 Andrew Zhang's Medium article on how to build a Markdown editor was helpful. I also often referenced the iOS list app we worked on in class for the file system framework as well as Swift documentation.  
+
+## Demo
+
+
+https://github.com/sophiahchiang/overleaf/assets/67343609/bd5e8608-a331-48fb-84cd-233e10099515
+
+
 
